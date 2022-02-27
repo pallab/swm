@@ -1,0 +1,34 @@
+[
+  {
+    "id" : 1,
+    "on" : "tweet",
+    "condition" : "location in ('bangalore','delhi')",
+    "actions" : [
+      {
+        "name" : "CallFb"
+      }
+    ]
+  },
+  {
+    "id" : 2,
+    "on" : "tweet",
+    "condition" : "text like '%social%' or text like '%media%'",
+    "actions" : [
+      {
+        "name" : "CallSwym"
+      }
+    ]
+  },
+  {
+    "id" : 3,
+    "on" : "tweet",
+    "aggregation" : "CountByUser",
+    "condition" : " (count - last_triggered_at) > 4",
+    "actions" : [
+      {
+        "name" : "AddEmoji",
+        "params" : ["balloons"]
+      }
+    ]
+  }
+]
